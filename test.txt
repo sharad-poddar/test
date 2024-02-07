@@ -1,0 +1,363 @@
+1. For the given Dataset (TFL Bus Safety): 
+i) Create a bar chart on boroughs field to visualize the trend in the count. 
+ii) Create a line chart for date of incidence for each month in a quarter, comment 
+on possibilities and suitability of different charts for this timeline.  
+iii) In above question, apply formatting to display the first letter of the month on 
+X-axis.  
+iv) Create tree maps of all the data fields except date & year and comment on 
+significance of tree map. 
+v) Create an interactive dashboard for the above data. 
+ 
+ 
+Solutions: 
+i) a. Drag the ‘Borough’ field to the columns shelf. 
+   b. Drag ‘Measure fields’ to the rows. 
+   c. Select ‘Bar Chart’ under ‘Show me’ section. 
+   d. Sort the Bar Chart in descending order. 
+ 
+ 
+ii) a. Drag the ‘Date of incident’ field to the column field. 
+    b. Right click on ‘Date of incident’ and select continuous. 
+    c. Drag ‘Number of records’ field to the rows. 
+   d. Right click on ‘Date of incident’ field in column & select ‘Exact date’. 
+   e. Right click on ‘Date of incident’ field in column & select ‘Quarter’. 
+   f. Drag ‘Quarter’ field to the columns shelf before the ‘Date of incident’ field. 
+ 
+iii) a. Create a line chart by following the previous sub-question. 
+     b. Now, right click on any one label in X-axis, then go to format. 
+     c. Under header, go to default, then select dates. 
+     d. Select first letter under dates. 
+ 
+iv) a. Drag Date to rows & Year to columns. 
+     b. Click on ‘Show Me’ and select the treemaps chart. 
+     c. Customize the treemaps by adding labels, adjusting colors, and arranging the                                              
+fields as desired. 
+  
+ 
+ 
+v) a. Click on ‘New Dashboard’ button in the bottom left corner of the Tableau 
+window.  
+    b. Drag the sheets and drop in the dashboard, select floating windows under 
+Objects, in Dashboard. 
+    c. Rearrange all the sheets, once all the sheets are added. 
+ 
+ 
+ 
+ 
+ 
+Tableau can be used to analyze the "TFL Bus Safety" dataset, which includes 
+information about bus incidents. We can create a bar chart to visualize incident counts 
+by borough and a line chart to observe trends in incidents over time. Formatting the 
+x-axis to display the first letter of each month enhances readability. Additionally, 
+treemaps can help explore data fields, excluding date and year, to understand 
+proportions and relationships. An interactive dashboard combines these visualizations 
+for a comprehensive view of the data. Using Tableau, we can gain insights into bus 
+safety trends and develop data analysis skills. 
+  
+  
+Problem – 2 
+Sales Revenue Dataset 
+2. Analysis of revenue in sales dataset: 
+i) Create a choropleth map (fill the map) to spot the special trends to show the state 
+which has the highest revenue. 
+ii) Create a line chart to show the revenue based on the month of the year. 
+iii) Create a bin of size 10 for the age measure to create a new dimension to show the 
+revenue. 
+iv) Create a donut chart view to show the percentage of revenue per region by creating 
+zero access in the calculated field. 
+v) Create a butterfly chart by reversing the bar chart to compare female & male 
+revenue based on product category. 
+vi) Create a calculated field to show the average revenue per state & display profitable 
+& non-profitable state. 
+vii) Build a dashboard. 
+Solutions: 
+i) a. Drag state to columns, select map, then in map tab, edit map location, change to 
+US, then drag total to label. 
+   b. Drag total to label, then format to millions. 
+ 
+ii) a. Create a line chart to show the revenue based on the month of the year.  
+    b. Drag total to rows.  
+    c. Convert month from string to date, by right click, and drag to column.  
+    d. Under marks, select sum(total), right click, format, then under pane, go to default, 
+under numbers, go to currency(custom), decimal place to 1, display units in Millions.  
+ 
+ 
+ 
+iii) a. Create a bin of size 10 for the age measure to create a new dimension to show 
+the revenue 
+    b. Drag age to columns, total to rows.  
+    c. Right click age in tables, create, bin, then size of bin to 10.  
+    d. Drag age bin to columns and remove age.  
+    e. Then under each bar, below the axis, right click, go to edit alias, then change 
+each alias from >10, 10-20, 20-30, 30-40, 40-50, 50-60, 60-70 respectively. 
+    f. Right click graph, format, then remove grid lines. 
+    g. Drag total to label, format, then currency, then unit is millions. 
+ 
+ 
+ 
+iv) a. Create a donut chart view to show the percentage of revenue per region by 
+creating zero access in the calculated field. 
+    b. Drag Region to column, total to row.  
+    c. Make a pie chart, selecting under ‘Show Me’.  
+    d. Drag region & total to label.  
+    e. In label, sum(total) right click, quick table calculation, percent of total. 
+    f. Create calculated field, rename to Zero Axis, write code as 0, then ok. 
+    g. Drag Zero Axis twice to rows. 
+    h. Then under marks, two fields of Zero Axis will be there, go to second, remove 
+all fields, then in graph, increase size in 1st, decrease in 2nd, then right click on Zero 
+Axis in pie chart, then dual axis, Change color to White. 
+    i. To remove the lines of zero axis, format-> edit -> none in zero lines. 
+ 
+v) a. Create a butterfly chart by reversing the bar chart to compare female & male 
+revenue based on product category. 
+    b. Drag Gender, Total to rows, Category to columns.  
+    c. Make a pie chart, selecting under ‘Show Me’.  
+    d. Create 2 calculated fields.  
+    e. For female revenue, Code is – if [Gender] = ‘F’ then [Total]end - Create same 
+for male revenue. 
+    f. Drag female and male to columns, remove total and gender. 
+    g. Drag zero axis between female and male revenue in columns. 
+    h. Rename the Zero Axis as Category by editing, and remove 0 in (tick tab) edit, 
+select none. 
+vi) a. Create a calculated field to show the average revenue per state & display 
+profitable & non-profitable state.  
+      b. Create calculated field to calculate average revenue per state, code – 
+avg({include[State] : sum([Total])})  
+      c. Create a calculated field for profitable & non profitable states, code - 
+if([Average Revenue Per State]) >= 8000000 then "Profitable State" else "Non
+Profitable State" end . 
+      d. Drag Avg prof and average revenue per state to columns, State to rows.  
+      e. Color the difference for profitable & non-profitable.  
+ 
+ 
+  
+vii) a. Create a dashboard, increase the width, and click on “Floating”. - Drag all 
+sheets and arrange properly.   
+  
+Tableau is a powerful data visualization tool that can be used to analyze large 
+datasets. It can help you to visualize the data in a way that is easy to understand and 
+interpret. Tableau can be used to create a variety of visualizations, including 
+choropleth maps, line charts, bar charts, and donut charts. These visualizations can 
+help you to identify trends and patterns in the data, which can then be used to make 
+informed decisions about your business.  
+Tableau can be used to answer many questions about your sales data. For 
+example, it can help you to identify which state has the highest revenue, how revenue 
+changes over time, how revenue differs by age group, and what the percentage of 
+revenue is by region. It is a powerful tool that can help you to gain insights into your 
+sales data and make informed decisions about your business.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Problem – 3 
+GDP Dataset 
+3. Analysis of GDP dataset: 
+i) Visualize the countries data given in the dataset with respect to latitude and 
+longitude along with country name using symbol maps. 
+ii) Create a bar graph to compare GDP of Belgium between 2006 – 2026. 
+iii) Using pie chart, visualize the GDP of India, Nepal, Romania, South Asia, 
+Singapore by the year 2010. 
+iv) Visualize the countries Bhutan & Costa Rica competing in terms of GDP. 
+v) Create a scatter plot or circle views of GDP of Mexico, Algeria, Fiji, Estonia from 
+2004 to 2006. 
+vi) Build an interactive dashboard. 
+   
+Solutions: 
+i) a. Drag Country name to columns, latitude of longitude to the rows. 
+    b. Drag country name to label. 
+    c. Under ‘Show me’, select symbol maps.  
+    d. Drag Country name to color, from drop down, select attribute. 
+ 
+ii) a) Drag Country name to columns, fields from 2006 to 2016 to rows 
+    b) From drop down in Country name present in Columns, select edit filter choose 
+Belgium only and click OK. 
+ 
+ 
+iii) a) Drag country name to columns from drop in it, select edit filter and choose 
+India, Nepal, Romania, South Asia, and Singapore 
+     
+      b) Drag Year (2010) to rows.  
+      c) From "Show Me" select Pie chart. 
+      d) Drag Country name, 2010 to Label. 
+iv) a) Drag Country name to columns from drop down in it, select edit filter and 
+choose Bhutan & Costa Rica. 
+     b) Drag years from 2008 to 2016 by holding shift key and selecting all at once. 
+ 
+v) a) Drag Country name to columns from drop down, select edit filter and select 
+Mexico, Algeria, Fiji, Estonia and click OK. 
+    b) Drag (Year) 2004, 2005, 2006, to rows  
+    c) From "Show Me" select circle views.  
+ 
+vi) a) Select Dashboard. 
+     b) Change height and width of the dashboard  
+     c) Change objects from tiled to floating. 
+     d) Drag all the sheets and rearrange them. 
+ 
+ 
+ 
+Tableau is essential for sorting and analyzing GDP data due to the data 
+exploration and visualization capabilities. It enables users to easily connect to various 
+data sources visualize GDP tools and sort based on GDP values or other matrices with 
+interactive dashboards and filtering options, stakeholders can explore insights of their 
+own, facilitating better understanding of GDP patterns and disparities. Tableau's 
+geospatial features also help plot GDP data on maps for regional analysis. 
+Additionally, its Scalability & performance ensure efficient handling of large GDP 
+datasets and time series analysis. 
+Problem – 4 
+HR Dataset 
+4. Analysis of HR Dataset: 
+i. Create KPI to show employee count, attrition count, attrition rate, attrition count, 
+active employees, and average age.  
+ii. Create a Lollipop Chart to show the attrition rate based on gender category. 
+iii. Create a pie chart to show the attrition percentage based on Department Category- 
+Drag department into colours and change automatic to pie. Entire view, Drag 
+attrition count to angle. Label attrition count, change to percent, add total also, edit 
+label. 
+iv. Create a bar chart to display the number of employees by Age group, 
+v. Create a highlight table to show the Job Satisfaction Rating for each job role based 
+on employee count. 
+vi. Create a horizontal bar chart to show the attrition count for each Education field 
+Education field wise attrition – drag education field to rows, sum attrition count to 
+col,  
+vii. Create multiple donut chart to show the Attrition Rate by Gender for different Age 
+group. 
+ 
+Solutions: 
+i) a. Employee Count: Drag Employee Count to the Label shelf. 
+   b. Attrition Count: Create a calculated field Attrition Count with the formula: IF 
+[Attrition] = 'Yes' THEN 1 ELSE 0 END. Double-click on this calculated field to 
+place it on both the Rows and Columns shelves, then reverse the order. 
+   c. Attrition Rate: Create a calculated field Attrition Rate with the formula: 
+SUM([Attrition Count]) / SUM([Employee Count]). Format it as a percentage with 2 
+decimal places. 
+   d. Active Employees: SUM([Employee Count]) - SUM([Attrition Count]). 
+   e. Average Age: Right-click on the Age field, change measure from SUM to AVG. 
+Format all numbers as decimal places with 0. 
+ 
+ 
+ 
+ii) a. Drag Gender to Rows. 
+     b. Drag Attrition Count to Columns twice. Change the second instance to a Circle 
+mark. 
+     c. Create dual axes for both charts (Columns shelf dropdown > Dual Axis). 
+     d. Reduce the size of the circle chart to create the lollipop effect. 
+     e. Add Label to show the count and align it to the center in the format tab. 
+ 
+iii) a. Drag Department to Colors shelf. 
+      b. Change the mark type to Pie. 
+      c. Label the slices with the Attrition Count and format them as percentages. 
+      d. Add a total label and edit the label accordingly. 
+ 
+ 
+iv) a. Create a parameter for Age Bin (dropdown > Create Parameter) with bin size 3, 
+min 2, max 10, step 1. 
+     b. Drag Age Bin to Columns and drag the Employee Count to Rows. 
+     c. Right-click on the Age Bin in Columns, choose Show Parameter Control. 
+ 
+v) a. Drag Job Role to Rows. 
+     b. Drag Sum of Job Satisfaction to the Columns shelf and then move it to 
+Dimensions. 
+     c. Drag Job Satisfaction to Columns. 
+     d. Drag Employee Count to Text. 
+     e. Analyze > Totals > Show Column and Row Grand Totals. 
+     f. Change the chart type to Highlight Table. 
+ 
+ 
+ 
+vi) a. Drag Education Field to Rows. 
+     b. Drag Sum of Attrition Count to Columns. 
+     c. Label Attrition Count. 
+ 
+ 
+ 
+ 
+vii) a. Drag Age Band to Columns. 
+       b. Create a pie chart by changing the mark type to Pie and selecting entire view. 
+       c. Drag Gender to Color. 
+       d. Drag Attrition Count to Angle. 
+       e. Create a second instance of Attrition Count and place it on Rows to create a 
+donut chart. Use the Age Band field for sorting by dragging it to the dropdown and 
+selecting Manual. 
+ 
+viii) a. Create a new Dashboard. 
+        b. Rename the Dashboard. 
+        c. Change the objects to floating. 
+        d. Drag all the sheets, label & rearrange them. 
+ 
+ 
+ 
+Analyzing HR Data in Tableau is crucial for organizations to gain valuable 
+insights into their workforce and make informed decisions. By examining variables 
+such as turnover rates, employee performance diversity & compensation, Tableau can 
+help HR teams identify patterns, improve employee satisfaction, and optimize 
+workforce planning. Visualizing demographic data can aid in promoting inclusivity, 
+while salary analysis ensures fair compensation practice. Evaluating factors like 
+engagement career growth, and geographical impact helps foster a productive and 
+satisfied work pace. Through data-driven decision making, Tableau empowers HR 
+professionals and organizational leaders to create an efficient, engaged, and 
+successful workforce. 
+ 
+ 
+Problem – 5 
+Amazon Prime Dataset 
+5. Analysis of Amazon Prime Dataset: 
+i. Create a Donut chart to show the percentage of movie and tv shows  
+ii. Create a area chart to shows by release year and type 
+iii. Create a horizontal bar chart to show Top 10 genre 
+iv. Create a map to display total shows by country 
+v. Create a text sheet to show the description of any movie/movies. 
+vi. Build an interactive Dashboard. 
+ 
+Solutions: 
+i) a. Drag Type and Title to column and rows shelf respectively  
+    b. Select Pie Chart from ‘Show Me' section.  
+    c. Right click on the title - Measure → Count (distinct), type to Color. 
+    d. Drag Type and Title to Label  
+    e. Create calculated field called Zero Axis 
+    f. Drag it twice to rows shelf. 
+    g. Then under Marks, two fields of Zero Axis exist go to second one - remove all 
+fields and decrease its size. 
+    h. Right click on the second Zero Axis and select dual axis. 
+    i. Change the color of the second pie chart to white. 
+ 
+ii) a. Drag and drop 'Release year' and "Show ID" to Columns and rows shelf 
+respectively. 
+     b. Right click on 'Show ID' in rows shelf, click on measure select Count (distinct) 
+     c. In the “Marks" section, select area from the drop-down list in place of automatic.  
+     d. Drag and drop 'Type' to color. 
+     e. Drag and drop 'Type' to Label. 
+ 
+ 
+iii) a. Drag Listed In" and "Show ID" to rows and Column shelf respectively  
+      b. Right click on "Show ID” then go to Measure → Count (distinct) 
+      c. Drag 'Listed In' to filter and edit it Accordingly to get top 10 Genres. 
+      d. Drag "Show ID" to label 
+      e. Select Horizontal Bars in Show me drop down to get horizontal bar chart. 
+ 
+ 
+ 
+ 
+ 
+iv) a. Drag Country and Show ID to rows and column shelf respectively.  
+     b. Drag "Country" to filters and remove null values. 
+     c. Drag Type to filters and select TV Shows only.  
+     d. Drag "Country" and "Show ID" to Label. 
+     e. Select Map in place of "automatic from drop down list in Marks. 
+ 
+ 
+v) a. Drag and drop Title to rows 
+    b. Select "Text" in place of automatic in the Marks section. 
+    c. Add Title to filter. Right click on 'Title' and select Show Filter. 
+    d. Drag "Type" to filter and select Movies only. 
+    e. Drag and drop Description to Text. 
+ 
+ 
+vi) a. Click on the Create new Dashboard button located at bottom left corner of 
+Tableau Window.  
+     b. Increase the width of the dashboard.  
+     c. Select floating windows under objects in the dashboard. 
+     d. Drag and drop all sheets and arrange them properly. 
+ 
